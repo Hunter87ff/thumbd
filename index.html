@@ -1,5 +1,10 @@
-<!-- GOOGLE ANALYTICS CODE HERE -->
-<meta content="width=device-width, inicial-scale=1.0" />
+
+<head><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <script src="/kug40gjz_editor.js" crossorigin="anonymous"></script>
+      <script src="/kug40gjz_console.js" crossorigin="anonymous"></script>
+      <script src="/kug40gjz_esprisma.js" crossorigin="anonymous"></script>
+      <link rel="stylesheet" href="/kug40gjz_console.css"></head><!-- GOOGLE ANALYTICS CODE HERE -->
+
 
 		<nav class="nav" style='background: #E5583A;'>
 			<div class="nav-container" style="width: 100%;max-width:100%;padding-left:20px;">
@@ -30,12 +35,24 @@
 <div style="width:100%; margin-top: 20px;"> </div>
 <div id="imgListing"class='imgListing' style="width:100%;left:0px">
 	<div id='topListing' style="display: none">
+	  
+	  <script>
+	    var Image = document.getElementById('maxres')
+	    function dwn(){
+	      Image.Download();
+	    }
+	  </script>
+	  
 		<h5 class="right-click-info">Right Click and click on 'Save Image As..' to save the images.</h5>
 		<h5 id='hdrestext'>HD Image (1280x720)</h5>
-		<a id="hdreslink" Download="" class="download-btn">Download HD Youtube Thumbnail</a>
-		<img id="maxres" src="" loading="eager" />
+		
+		
+		<a id="hdreslink" Download="" class="download-btn" onclick="dwn()">Download HD Youtube Thumbnail</a>
+		<img id="maxres" onclick="dwn()" src="" loading="eager" />
+		
+		
 		<h5 id='sdrestext'>SD Image (640x480)</h5>
-		<a id="sdreslink" Download="" class="download-btn">Download SD Youtube Thumbnail</a>
+		<a id="sdreslink"  class="download-btn">Download SD Youtube Thumbnail</a>
 		<img id="sdres" src="" loading="auto" />
 	</div>
 
