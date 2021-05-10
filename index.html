@@ -1,0 +1,137 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>#1 YouTube Thumbnail Downloader</title>
+
+<meta charset="utf-8">
+<meta name="author" content="Mr Rahman" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="Fetch, Grab, View or Download Thumbnails from any YouTube Video. It's Free and Easy.">
+<meta name="keywords" content="YouTube, YouTube Thumbnails Downloader, Mr Rahman, yt thumbnails full resolution">
+
+<link rel='icon' type='image/x-icon' href='images/favicon.png' />
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/style.css">
+<link href="https://fonts.googleapis.com/css?family=Dosis:500" rel="stylesheet">
+</head>
+<body oncontextmenu="return false">
+<nav class="navbar container-fluid site-gradient text-center" id="nav">
+<a class="navbar-brand" href="#">
+<img alt="Brand" src="images/navicon.png">
+<a style="outline:none;" id="header-links" href="#">
+</a>
+</nav>
+
+<div class="container text-center" id="main">
+<div id="result" class="hidden">
+
+<img class="" id="thumbnailpreview" src="images/placeholder.jpg" onerror="this.style.display='none'" />
+
+<hr style="width:50vw;">
+
+<div class="input-group">
+<input id="ytlink" autofocus type="text" class="form-control shadow" placeholder="Enter a YouTube URL" spellcheck="false" onsubmit="youtube_thumbnail_downloader(ytlink.value);ShowMain()" autocomplete="off" />
+</div>
+<button id="thumbdloadbtn" class="thumbdloadbtn site-gradient" type="button" onclick="youtube_thumbnail_downloader(ytlink.value);ShowMain()">DOWNLOAD</button>
+
+
+<div id="download-buttons">
+<a target="_blank" id="thumbnailhq" download><button class="thumbdloadbtn site-gradient shadow">Highest Resolution</button></a>
+<br>
+<a target="_blank" id="thumbnailmq" download><button class="thumbdloadbtn site-gradient shadow">Medium Resolution</button></a>
+<br>
+<a target="_blank" id="thumbnaillq" download><button class="thumbdloadbtn site-gradient shadow">Lowest Resolution</button></a>
+<br>
+<a onclick="location.reload();"><button class="thumbdloadbtn site-gradient shadow">Fetch Again</button></a>
+</div>
+
+</div>
+</div>
+<div class="container" id="about">
+<h1>About</h1>
+<p>The Purpose of this Website is to provide people a Simple Way to download and use YouTube Video Thumbnails from any Video on YouTube and all you need is the URL of the Video. </p>
+<p>You can download the Thumbnails in Three Different Qualities, they are:
+<ul>
+<li>High Quality (Maximum Resolution)</li>
+<li>Medium Quality (Medium Resolution)</li>
+<li>Low Quality (Lowest Resolution)</li>
+</ul>
+<hr>
+<strong><p> High Quality Thumbnails won't open, what to do?</p></strong>
+<p>- That's because the High Quality Thumbnails are minimum of <strong>1280 x 720 Pixels</strong> and if the Channel Owner has uploaded a Thumbnail lower than that, it won't work. Choose the Medium Quality or low. </p>
+<hr>
+<strong><p> Are the Thumbnails Copyright Free?</p></strong>
+<p>- Even though most of them are, it's highly recommended that you take Permission from the Video owner before downloading the Thumbnail and using it somewhere like your commercial Project.</p>
+<p>Read more about the Project, <a href="https://www.oflox.com/blog" style="color:black" target="_blank"><u>here</u></a>. </p>
+</div>
+<hr>
+<div class="container text-center" id="about">
+<p>Thanks for using YouTube Thumbnail Downloader. You can find me on Social Media or <a href="https://www.oflox.com/" style="color:black" target="_blank"><u>Contact me</u></a>.</p>
+<br>
+<p>You can also download the latest version of this script, <a href="http://oflox.com/blog/youtube-thumbnail-downloader-script/" style="color:black" target="_blank"><u>Click Here</u></a>.</p>
+</div>
+<footer id="footer" class="site-gradient container-fluid text-center">
+<div id="social-media">
+<a href="https://www.facebook.com/ofloxindia" target="_blank" id="social-media-icons">
+<img id="social" src="images/svg/facebook.svg" alt="Facebook"></img>
+</a>
+<a href="https://www.twitter.com/oflox3" target="_blank" id="social-media-icons">
+<img id="social" src="images/svg/twitter.svg" alt="Twitter"></img>
+</a>
+<a href="https://www.youtube.com/channel/UCew_32IICfUDULSW5p86jCQ" target="_blank" id="social-media-icons">
+<img id="social" src="images/svg/youtube.svg" alt="YouTube"></img>
+</a>
+<a href="https://www.instagram.com/ofloxindia" target="_blank" id="social-media-icons">
+<img id="social" src="images/svg/instagram.svg" alt="Instagram"></img>
+</a>
+<a href="mailto:OfloxIndia@gmail.com" id="social-media-icons">
+<img id="social" src="images/svg/gmail.svg" alt="Email"></img>
+</a>
+
+</div>
+<script data-cfasync="false" src="js/email-decode.min.js"></script><script src="js/jquery3.3.1.min.js"></script>
+<script src="js/thumbnail.js"></script>
+<script type="text/javascript">
+        // Replace source
+        $('img').error(function () {
+            $(this).attr('src', '#.png');
+        });
+
+        // Or, hide them
+        $("img").error(function () {
+            $(this).hide();
+        });
+    </script>
+<script>
+        $('#ytlink').keydown(function (e) {
+            var keyCode = (e.keyCode ? e.keyCode : e.which);
+            if (keyCode == 13) {
+                $('#thumbdloadbtn').trigger('click');
+            }
+        });
+    </script>
+<script>
+        $("#preview div").hide();
+        $("#preview");
+    </script>
+<script>
+        var realImage = document.getElementById('thumbnailpreview');
+        var loadingImage = document.getElementById('loadingImage');
+        loadingImage.style.display = 'inline';
+        realImage.style.display = 'none';
+
+        // Create new image
+        var imgPreloader = new Image();
+        // define onload (= image loaded)
+        imgPreloader.onload = function () {
+            realImage.src = imgPreloader.src;
+            realImage.style.display = 'inline';
+            loadingImage.style.display = 'none';
+        };
+        // set image source
+        imgPreloader.src = 'images/placeholder.jpg';
+    </script>
+</body>
