@@ -5,7 +5,7 @@
   "display": "standalone",
   "icons": [
     {
-      "src": "https://raw.githubusercontent.com/Hunter87ff/photohost/main/assets/Logo/td.jpg",
+      "src": "resources/images/Logo/TD.jpg",
       "sizes": "520×520",
       "type": "image/png"
     }
