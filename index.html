@@ -10,6 +10,7 @@ thumbnaildownloader"/>
 	<!--amp script-->
 <script async src="https://cdn.ampproject.org/v0.js"></script>
 <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
+	<script async custom-element="amp-script" src="https://cdn.ampproject.org/v0/amp-script-0.1.js"></script>
 
 	<!--amp style-->
 	<style amp-custom>
@@ -63,28 +64,32 @@ thumbnaildownloader"/>
 		<a id="hdreslink">
 		<button style="background-color:green; font-family:Arial; color:#fff;" class="download-btn">Download HD</button></a>
 		<br>
-		<amp-img id="maxres" class="thum" />
+		<amp-img id="maxres" height="200px" width="340px"  class="thum" />
 		
 		
 		<h5 id='sdrestext'>SD Image (640x480)</h5>
 		<a id="sdreslink"><button style="background-color:green; font-family:Arial; color:#fff;"  class="download-btn">Download SD</button></a>
-		<amp-img id="sdres" class="thum" />
+		<amp-img id="sdres" height="200px" width="340px" class="thum" />
 	</div>
 
 	<div id='bottomListing' style="display: none">
+		
 		<h5 id='normalrestext'>Normal Image (480x360)</h5>
 		<a id="hqreslink" >
 			<button style="background-color:green; font-family:Arial; color:#fff;" class="download-btn">Download Normal</button></a>
-		<amp-img id="hqres" class="thum"/>
+		<amp-img id="hqres" height="200px" width="340px"  class="thum"/>
+		
 		<div id='extraYTImg'>
 		<h5>Normal Image (320x180)</h5>
 		<a id="mqreslink"  >
 			<button style="background-color:green; font-family:Arial; color:#fff;" class="download-btn">Download (320×180)</button></a>
-		<amp-img id="mqres" class="thum"  />
+		<amp-img id="mqres" height="200px" width="340px"  class="thum"  />
+			
+			
 		<h5>Normal Image (120x90)</h5>
 		<a id="defreslink" >
 			<button style="background-color:green; font-family:Arial; color:#fff;" class="download-btn">Download (120x90)</button></a>
-		<amp-img id="defres" class="thum"  />
+		<amp-img id="defres" height="200px" width="340px"  class="thum"  />
 	</div>
 </div>
 
@@ -108,7 +113,7 @@ thumbnaildownloader"/>
 
 </main>
 
-<script type='text/javascript'>
+<amp-script type='text/javascript'>
 function initDownloadLinks (e) {
     var value = document.getElementById("inputURL").value;
     console.log(value);
