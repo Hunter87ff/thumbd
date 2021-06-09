@@ -42,7 +42,21 @@ thumbnaildownloader"/>
 
 <div class='container'>
 <!--table-->
-	
+	<table style='width: 100%;'>
+
+<amp-form class='downloadForm' onsubmit="event.preventDefault(); initDownloadLinks();">
+		<tr><td>
+<input aria-label='input URL ' class='form-control col-lg-6' id='inputURL' placeholder='Enter the youtube URL here' type='text'/></td></tr>
+
+<tr>
+<td>
+<center>
+<input type='submit' class='btn btn-default' id='submitButton' type='button' style='background: #25F982; font-weight: bold;' value='Download YouTube Thumbnail' />
+</center>
+</td>
+</tr>
+</amp-form>
+</table>
 <p style='text-align: center;margin:0 auto;max-width: 1000px;padding-top: 30px;padding-bottom: 30px;font-size: 16px;'>This website is a Free online tool, with the help of which you can download <b>Youtube Video Thumbnail</b> in Different Sizes and Qualities. Just Paste your Youtube Video Link in the Input Box Given Below and press "Download Youtube Thumbnail", and That's it.</p>
 
 <div style="width:100%; margin-top: 20px;">
@@ -56,27 +70,30 @@ thumbnaildownloader"/>
 		
 		
 		<a id="hdreslink">
-		<button style="background-color:green; font-family:Arial; color:#fff;" Download="" class="download-btn">Download HD</button></a>
+		<button style="background-color:green; font-family:Arial; color:#fff;" class="download-btn">Download HD</button></a>
 		<br>
-		<amp-img id="maxres" onclick="dwn()" src="" loading="eager" />
+		<amp-img id="maxres"  />
 		
 		
 		<h5 id='sdrestext'>SD Image (640x480)</h5>
-		<a id="sdreslink"><button style="background-color:green; font-family:Arial; color:#fff;" Download="" class="download-btn">Download SD</button></a>
-		<amp-img id="sdres" src="" loading="auto" />
+		<a id="sdreslink"><button style="background-color:green; font-family:Arial; color:#fff;"  class="download-btn">Download SD</button></a>
+		<amp-img id="sdres"  />
 	</div>
 
 	<div id='bottomListing' style="display: none">
 		<h5 id='normalrestext'>Normal Image (480x360)</h5>
-		<a id="hqreslink" ><button style="background-color:green; font-family:Arial; color:#fff;" Download="" class="download-btn">Download Normal</button></a>
-		<amp-img id="hqres" src="" loading="lazy" />
+		<a id="hqreslink" >
+			<button style="background-color:green; font-family:Arial; color:#fff;" class="download-btn">Download Normal</button></a>
+		<amp-img id="hqres" />
 		<div id='extraYTImg'>
 		<h5>Normal Image (320x180)</h5>
-		<a id="mqreslink" ><button style="background-color:green; font-family:Arial; color:#fff;" Download="" class="download-btn">Download (320×180)</button></a>
-		<amp-img id="mqres" src="" loading="lazy" />
+		<a id="mqreslink" >
+			<button style="background-color:green; font-family:Arial; color:#fff;" class="download-btn">Download (320×180)</button></a>
+		<amp-img id="mqres"   />
 		<h5>Normal Image (120x90)</h5>
-		<a id="defreslink" ><button style="background-color:green; font-family:Arial; color:#fff;" Download="" class="download-btn">Download (120x90)</button></a>
-		<amp-img id="defres" src="" loading="lazy" />
+		<a id="defreslink" >
+			<button style="background-color:green; font-family:Arial; color:#fff;" class="download-btn">Download (120x90)</button></a>
+		<amp-img id="defres"   />
 	</div>
 </div>
 
