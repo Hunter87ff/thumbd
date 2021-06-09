@@ -3,13 +3,7 @@
   "theme_color": "#000",
   "background_color": "#000",
   "display": "standalone",
-  "icons": [
-    {
-      "src": "resources/images/Logo/TD.jpg",
-      "sizes": "520×520",
-      "type": "image/png"
-    }
-  ],
+  
   "name": "TH DOWNLOAD",
   "short_name": "TH DOWNLOAD",
   "start_url": "index.html"
