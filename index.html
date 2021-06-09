@@ -48,7 +48,22 @@ thumbnaildownloader"/>
 
 <div class='container'>
 <!--table-->
+<table style='width: 100%;'>
+<form class='downloadForm' onsubmit="event.preventDefault(); initDownloadLinks();" >
+		<tr>
+		<td>
+<input aria-label='input URL ' class='form-control col-lg-6' id='inputURL' placeholder='Enter the youtube URL here' type='text'/></td></tr>
 
+<tr>
+<td>
+<center>
+<input type='submit' class='btn btn-default' id='submitButton' type='button'   style='background: #25F982; font-weight: bold;' value='Download YouTube Thumbnail' />
+</center>
+</td>
+</tr>
+</form>
+
+</table>
 <p style='text-align: center;margin:0 auto;max-width: 1000px;padding-top: 30px;padding-bottom: 30px;font-size: 16px;'>This website is a Free online tool, with the help of which you can download <b>Youtube Video Thumbnail</b> in Different Sizes and Qualities. Just Paste your Youtube Video Link in the Input Box Given Below and press "Download Youtube Thumbnail", and That's it.</p>
 
 <div style="width:100%; margin-top: 20px;">
@@ -58,18 +73,18 @@ thumbnaildownloader"/>
 	  
 	  
 		<h5 class="right-click-info">Right Click and click on 'Save Image As..' to save the images.</h5>
+	
+	
 		<h5 id='hdrestext'>HD Image (1280x720)</h5>
-		
-		
 		<a id="hdreslink">
 		<button style="background-color:green; font-family:Arial; color:#fff;" class="download-btn">Download HD</button></a>
 		<br>
-		<amp-img id="maxres" height="200px" width="340px"  class="thum" />
+		<img id="maxres" loading="eager" />
 		
 		
 		<h5 id='sdrestext'>SD Image (640x480)</h5>
 		<a id="sdreslink"><button style="background-color:green; font-family:Arial; color:#fff;"  class="download-btn">Download SD</button></a>
-		<amp-img id="sdres" height="200px" width="340px" class="thum" />
+		<img id="sdres" loading="eager"/>
 	</div>
 
 	<div id='bottomListing' style="display: none">
@@ -77,19 +92,19 @@ thumbnaildownloader"/>
 		<h5 id='normalrestext'>Normal Image (480x360)</h5>
 		<a id="hqreslink" >
 			<button style="background-color:green; font-family:Arial; color:#fff;" class="download-btn">Download Normal</button></a>
-		<amp-img id="hqres" height="200px" width="340px"  class="thum"/>
+		<img id="hqres" loading="lazy"/>
 		
 		<div id='extraYTImg'>
 		<h5>Normal Image (320x180)</h5>
 		<a id="mqreslink"  >
 			<button style="background-color:green; font-family:Arial; color:#fff;" class="download-btn">Download (320×180)</button></a>
-		<amp-img id="mqres" height="200px" width="340px"  class="thum"  />
+		<img id="mqres"  loading="lazy"/>
 			
 			
 		<h5>Normal Image (120x90)</h5>
 		<a id="defreslink" >
 			<button style="background-color:green; font-family:Arial; color:#fff;" class="download-btn">Download (120x90)</button></a>
-		<amp-img id="defres" height="200px" width="340px"  class="thum"  />
+		<img id="defres" loading="auto"/>
 	</div>
 </div>
 
@@ -113,7 +128,7 @@ thumbnaildownloader"/>
 
 </main>
 
-<amp-script>
+<script>
 function initDownloadLinks (e) {
     var value = document.getElementById("inputURL").value;
     console.log(value);
