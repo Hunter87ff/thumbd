@@ -3,8 +3,15 @@
   "theme_color": "#000",
   "background_color": "#000",
   "display": "standalone",
-  
+  "icons": [
+    {
+      "src": "plogo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
   "name": "TH DOWNLOAD",
   "short_name": "TH DOWNLOAD",
   "start_url": "index.html"
 }
+
