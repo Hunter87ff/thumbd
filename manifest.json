@@ -10,8 +10,8 @@
       "type": "image/png"
     }
   ],
-  "name": "TH DOWNLOAD",
-  "short_name": "TH DOWNLOAD",
+  "name": "Thumbnail Downloader",
+  "short_name": "Thumbnail Downloader",
   "start_url": "index.html"
 }
 
